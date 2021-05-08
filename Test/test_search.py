@@ -40,20 +40,20 @@ class Search(unittest.TestCase):
         base.clear_text(search.search_box)
         checkbox = search.check_search()
         self.assertEqual('Search', checkbox, 'This text is not matching')
-    #
-    # @parameterized.expand([
-    #     ["Chrome"],
-    #     ["Firefox"],
-    # ])
-    # Check List suggest
+
+    @parameterized.expand([
+        ["Chrome"],
+        ["Firefox"],
+    ])
+    #Check List suggest
     @unittest.skip
-    def test_listsuggest(self):
-        # if browser == 'Chrome':
-        #     self.driver = webdriver.Chrome()
-        #     time.sleep(3)
-        # elif browser == 'Firefox':
-        #     self.driver = webdriver.Firefox(executable_path='D:/Trainer/Selenium/Test_FinalProject/geckodriver.exe')
-        #     time.sleep(3)
+    def test_listsuggest(self,browser):
+        if browser == 'Chrome':
+            self.driver = webdriver.Chrome()
+            time.sleep(3)
+        elif browser == 'Firefox':
+            self.driver = webdriver.Firefox(executable_path='D:/Trainer/Selenium/Test_FinalProject/geckodriver.exe')
+            time.sleep(3)
         self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(10)
         self.driver.get('http://automationpractice.com/index.php')

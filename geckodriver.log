@@ -188,9 +188,14 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
 1620497413029	Marionette	INFO	Listening on port 50167
 1620497413556	Marionette	WARN	TLS certificate errors will be ignored for this session
-1620497530879	geckodriver	INFO	Listening on 127.0.0.1:50249
-1620497534118	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\rust_mozprofileVAtBaL"
-1620497535234	Marionette	INFO	Marionette enabled
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x1F0011,name=PBackgroundStorage::Msg_Observe) Channel error: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x1F0011,name=PBackgroundStorage::Msg_Observe) Channel error: cannot send/recv
+
+1620498819800	Marionette	INFO	Stopped listening on port 50167
+abled
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
 1620497542515	Marionette	INFO	Listening on port 50265
 1620497543053	Marionette	WARN	TLS certificate errors will be ignored for this session
