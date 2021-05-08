@@ -1,13 +1,11 @@
 import time
 import unittest
+from parameterized import parameterized
 
-import chromedriver_autoinstaller
 from selenium import webdriver
 
 from Pages.SearchPage import ProductDetailPage
 from Test.BaseTest import Base
-
-chromedriver_autoinstaller.install()
 
 
 class Search(unittest.TestCase):
@@ -16,27 +14,40 @@ class Search(unittest.TestCase):
         print('Test start')
         print('-------------------------')
 
+
+    @parameterized.expand([
+        "Chrome",
+        "Firefox"
+    ])
     # check search box when send key and clear
-    def test_search(self):
+    def test_search(self, browser):
+        if browser == "Firefox":
+            self.driver = webdriver.Firefox(executable_path="E:/Test_FinalProject/geckodriver.exe")
+            self.driver.implicitly_wait(10)
+            self.driver.get("http://automationpractice.com/")
+            time.sleep(3)
+        elif browser == "Chrome":
+            self.driver = webdriver.Chrome(executable_path="E:/Test_FinalProjec/chromedriver.exe")
+            self.driver.implicitly_wait(10)
+            self.driver.get("http://automationpractice.com")
+            time.sleep(3)
         text = 'Dress'
-        self.driver = webdriver.Chrome()
-        self.driver.implicitly_wait(10)
-        self.driver.get('http://automationpractice.com/index.php')
-        self.driver.maximize_window()
         search = ProductDetailPage(self.driver)
         base = Base(self.driver)
         base.click('xpath', search.search_box)
-        base.send_key('xpath',search.search_box,text)
+        base.send_key('xpath', search.search_box, text)
         time.sleep(3)
         base.clear_text(search.search_box)
         checkbox = search.check_search()
         self.assertEqual('Search', checkbox, 'This text is not matching')
+
     #
     # @parameterized.expand([
     #     ["Chrome"],
     #     ["Firefox"],
     # ])
     # Check List suggest
+    @unittest.skip
     def test_listsuggest(self):
         # if browser == 'Chrome':
         #     self.driver = webdriver.Chrome()
@@ -66,6 +77,7 @@ class Search(unittest.TestCase):
     #     ["Chrome"],
     #     ["Firefox"],
     # ])
+    @unittest.skip
     def test_namesuggest(self):
         # if browser == 'Chrome':
         #     self.driver = webdriver.Chrome()
@@ -108,6 +120,7 @@ class Search(unittest.TestCase):
     #     ["Chrome"],
     #     ["Firefox"],
     # ])
+    @unittest.skip
     def test_search_quantity(self):
         # if browser == 'Chrome':
         #     self.driver = webdriver.Chrome()
@@ -136,6 +149,7 @@ class Search(unittest.TestCase):
     #     ["Chrome"],
     #     ["Firefox"],
     # ])
+    @unittest.skip
     def test_check_price(self):
         # if browser == 'Chrome':
         #     self.driver = webdriver.Chrome()
@@ -169,6 +183,7 @@ class Search(unittest.TestCase):
     # Kiểm tra kết quả tìm kiếm sau khi nhập sai tên sản phẩm
 
     # check wrong keyword when searching
+    @unittest.skip
     def test_wrong_keyword(self):
         # if browser == 'Chrome':
         #     self.driver = webdriver.Chrome()
