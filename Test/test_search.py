@@ -27,7 +27,7 @@ class Search(unittest.TestCase):
             self.driver.get("http://automationpractice.com/")
             time.sleep(3)
         elif browser == "Chrome":
-            self.driver = webdriver.Chrome(executable_path="E:/Test_FinalProjec/chromedriver.exe")
+            self.driver = webdriver.Chrome(executable_path="E:/Test_FinalProject/chromedriver.exe")
             self.driver.implicitly_wait(10)
             self.driver.get("http://automationpractice.com")
             time.sleep(3)
@@ -40,7 +40,6 @@ class Search(unittest.TestCase):
         base.clear_text(search.search_box)
         checkbox = search.check_search()
         self.assertEqual('Search', checkbox, 'This text is not matching')
-
     #
     # @parameterized.expand([
     #     ["Chrome"],
