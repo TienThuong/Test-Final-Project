@@ -72,18 +72,18 @@ class Search(unittest.TestCase):
                 print('The suggest keyword is not matching')
 
     # Check list suggest with name's product
-    # @parameterized.expand([
-    #     ["Chrome"],
-    #     ["Firefox"],
-    # ])
+    @parameterized.expand([
+        ["Chrome"],
+        ["Firefox"],
+    ])
     @unittest.skip
-    def test_namesuggest(self):
-        # if browser == 'Chrome':
-        #     self.driver = webdriver.Chrome()
-        #     time.sleep(3)
-        # elif browser == 'Firefox':
-        #     self.driver = webdriver.Firefox(executable_path='D:/Trainer/Selenium/Test_FinalProject/geckodriver.exe')
-        #     time.sleep(3)
+    def test_namesuggest(self,browser):
+        if browser == 'Chrome':
+            self.driver = webdriver.Chrome()
+            time.sleep(3)
+        elif browser == 'Firefox':
+            self.driver = webdriver.Firefox(executable_path='D:/Trainer/Selenium/Test_FinalProject/geckodriver.exe')
+            time.sleep(3)
         self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(10)
         self.driver.get('http://automationpractice.com/index.php')
@@ -115,18 +115,18 @@ class Search(unittest.TestCase):
                 print('This name is does not matching')
 
     # check search quantity
-    # @parameterized.expand([
-    #     ["Chrome"],
-    #     ["Firefox"],
-    # ])
+    @parameterized.expand([
+        ["Chrome"],
+        ["Firefox"],
+    ])
     @unittest.skip
-    def test_search_quantity(self):
-        # if browser == 'Chrome':
-        #     self.driver = webdriver.Chrome()
-        #     time.sleep(3)
-        # elif browser == 'Firefox':
-        #     self.driver = webdriver.Firefox(executable_path='D:/Trainer/Selenium/Test_FinalProject/geckodriver.exe')
-        #     time.sleep(3)
+    def test_search_quantity(self,browser):
+        if browser == 'Chrome':
+            self.driver = webdriver.Chrome()
+            time.sleep(3)
+        elif browser == 'Firefox':
+            self.driver = webdriver.Firefox(executable_path='D:/Trainer/Selenium/Test_FinalProject/geckodriver.exe')
+            time.sleep(3)
         self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(10)
         self.driver.get('http://automationpractice.com/index.php')
@@ -144,18 +144,18 @@ class Search(unittest.TestCase):
             print('This does not matching')
 
     # # check price's product when searching
-    # @parameterized.expand([
-    #     ["Chrome"],
-    #     ["Firefox"],
-    # ])
+    @parameterized.expand([
+        ["Chrome"],
+        ["Firefox"],
+    ])
     @unittest.skip
-    def test_check_price(self):
-        # if browser == 'Chrome':
-        #     self.driver = webdriver.Chrome()
-        #     time.sleep(3)
-        # elif browser == 'Firefox':
-        #     self.driver = webdriver.Firefox(executable_path='D:/Trainer/Selenium/Test_FinalProject/geckodriver.exe')
-        #     time.sleep(3)
+    def test_check_price(self,browser):
+        if browser == 'Chrome':
+            self.driver = webdriver.Chrome()
+            time.sleep(3)
+        elif browser == 'Firefox':
+            self.driver = webdriver.Firefox(executable_path='D:/Trainer/Selenium/Test_FinalProject/geckodriver.exe')
+            time.sleep(3)
         self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(10)
         self.driver.get('http://automationpractice.com/index.php')
